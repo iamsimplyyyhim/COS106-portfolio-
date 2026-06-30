@@ -466,6 +466,26 @@ footer {
   color: var(--text-muted);
   z-index: 1;
 }
+.hero-photo-real {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius-xl);
+  display: block;
+}
+.about-photo-real {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  display: block;
+  margin: 0 auto;
+}
 .hero-badge {
   position: absolute;
   bottom: -16px; left: -16px;
@@ -1082,9 +1102,10 @@ footer {
   .hero-badge { left: 50%; transform: translateX(-50%); bottom: -16px; white-space: nowrap; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
-  .about-grid { grid-template-columns: 1fr; }
-  .about-photo-wrap { position: static; display: flex; justify-content: center; }
+  .about-grid { grid-template-columns: 1fr; gap: 36px; }
+  .about-photo-wrap { position: static; display: flex; flex-direction: column; align-items: center; }
   .about-photo-placeholder { max-width: 320px; width: 100%; }
+  .about-photo-wrap .card { max-width: 320px; width: 100%; }
   .projects-grid { grid-template-columns: 1fr; }
   .project-card.featured { flex-direction: column; }
   .project-card.featured .project-img { width: 100%; min-height: 220px; }
@@ -1107,12 +1128,21 @@ footer {
   .footer-bottom { flex-direction: column; text-align: center; }
   .contact-form-wrap { padding: 24px; }
   .hero-photo-placeholder { max-width: 300px; font-size: 3.5rem; }
+  .about-photo-real { max-width: 260px; }
+  .about-photo-wrap .card { max-width: 260px; padding: 18px !important; }
+  .edu-table { display: block; overflow-x: auto; white-space: nowrap; }
+  .edu-table th, .edu-table td { white-space: normal; }
+  .about-block h3 { font-size: 1.1rem; }
 }
 @media (max-width: 480px) {
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .stat-number { font-size: 1.8rem; }
   .hero-cta { flex-direction: column; align-items: center; }
   .hero-cta .btn { width: 100%; justify-content: center; }
+  .about-photo-real { max-width: 220px; }
+  .about-photo-wrap .card { max-width: 220px; }
+  .skills-wrap { gap: 8px; }
+  .skill-pill { font-size: 0.78rem; padding: 6px 12px; }
 }
 
 /* ---- REDUCED MOTION ---- */
